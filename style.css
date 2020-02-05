@@ -4,32 +4,27 @@
     text-align: center;
   }
   
-  /* header Section */
-  
+  /* header Section */ 
   .header__title {
-    padding: 50px 0 0;
+    padding: 10px 0 0;
     font-family: "Bad Script", cursive;
     font-weight: bold;
+    font-size: 30px;
   }
   
   .translate-button {
-      font-family: "Bad Script", cursive;
-      padding: 2px 20px;
+      padding: 8px 20px;
       margin-top: 5px;
       border-radius: 5px;
-      background-color:black;
+      background-color:rgb(48, 48, 117);;
       color: whitesmoke;
       font-weight: bold;
-      font-size: smaller;
+      font-size: 20px;
       border: none;
       cursor: pointer;
       outline: none;
   }
   
-  .header__item {
-    color: black;
-  }
-
   .header__earth   {
     width: 90px;
     height: 88px;
@@ -37,25 +32,21 @@
     bottom: 0;
     left: 0;
     right: 0;
-    margin: 30px 10px 0 450px;
+    margin: 30px 10px 0 600px;
     overflow: hidden;
     border-radius: 70%;
+    
     box-shadow: 0 0 10px 10px rgb(44, 42, 42) inset, 0 0 10px 10px gray;
 }
 
 .header__earth > div{
-   width : 300%;
+   width : 300%;   
    height: 100%;
    animation: spin 30s linear alternate infinite;
    background-image: url("Earth.jpg");
    background-size: cover;
 }
 .header__earth  :after{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     border-radius: 70%;
 }
 
@@ -72,7 +63,7 @@
   }
   
   .search__header {
-    font-size: 30px;
+    font-size: 25px;
     font-family: "Bad Script", cursive;
     font-weight: bold;
   }
@@ -86,10 +77,9 @@
   }
   
   .search__button {
-    font-family: "Bad Script", cursive;
-    padding: 2px 15px;
+    padding: 8px 15px;
     border-radius: 5px;
-    background-color: rgb(43, 40, 40);
+    background-color: rgb(48, 48, 117);
     color: white;
     font-weight: bold;
     font-size: larger;
@@ -102,37 +92,39 @@
       display: flex;
       justify-content: center;
   }
-  .articles__list {
-      
-      
-      background-color: whitesmoke;
-      margin-top: 10px;
-      width: 550px;
-  
+  .article__description{
+    margin: 20px;
   }
-  
-  .articles__list li {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: whitesmoke;
+  .articles__list {
       margin-top: 10px;
-  
   }
   
   .articles__item{
-      margin: 5px;
-      width: 550px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+    padding: 10px;
+    width: 350px;
   }
   .articles__anchor{
       color: black;
   }
   
-  
   @media only screen and (max-width: 450px) {
-    /* .home__cover{
-          width: 100vw;
-          height: 30vh;
-          margin:  30px 0;
-      } */
+    .header__earth{
+      width: 90px;
+      height: 88px;
+      margin: 30px 0 0 120px;
+      overflow: hidden;
+      border-radius: 70%;
+   
+      box-shadow: 0 0 10px 10px rgb(44, 42, 42) inset, 0 0 10px 10px gray;
+      
+  }
+  .header__title{
+     margin-top: 30px; 
+  }
+
   }

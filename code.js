@@ -1,6 +1,5 @@
 let menu = document.getElementById("search__menu")
 let search = document.getElementById("search__button")
-let countryCode;
 let ul = document.querySelector(".articles__list");
 let xhr = new XMLHttpRequest;
 
@@ -18,11 +17,6 @@ search.addEventListener('click', () => {
     }
     apicall(url)
 })
-
-ul.addEventListener('click', () => {
-    console.log(event.target)
-});
-
 
 let apicall = (url, callback) => {
     xhr.onreadystatechange = () => {
@@ -46,7 +40,7 @@ let apicall = (url, callback) => {
 
                 let description = document.createElement("span");
                 description.innerHTML = item.description;
-                title.classList.add("article__description")
+                description.classList.add("article__description")
 
                 let anchor =document.createElement('a');
                 anchor.href= item.url;
@@ -69,14 +63,12 @@ let apicall = (url, callback) => {
                 translateBtn.addEventListener("click", () =>{
                     let url2 ="https://translate.yandex.net/api/v1.5/tr.json/translate" + 
                     "?key=trnsl.1.1.20200204T203412Z.4c3799296843dd33.06f6e271e121e6ebd8428ff4fbab8ad1e1fa3a32"+
-                    "&text="+ item.description +
+                    "&text="+ item.title + "&text=" + item.description +
                     "&lang=ar"
 
                     apicall(url2, (response)=>{
-                        if(response.text[0] != null){
-                        description.innerText = response.text[0];
-                        }
-
+                        title.innerText = response.text[0];
+                        description.innerText = response.text[1];
                     })
                 })
 
