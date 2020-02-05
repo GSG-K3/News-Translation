@@ -12,28 +12,58 @@
   font-weight: bold;
 }
 
-.translate-button {
-    font-family: "Bad Script", cursive;
-    padding: 2px 20px;
-    margin-top: 5px;
-    border-radius: 5px;
-    background-color:black;
-    color: whitesmoke;
-    font-weight: bold;
-    font-size: smaller;
-    border: none;
-    cursor: pointer;
-    outline: none;
+/* header Section */
+.header{
+    display: flex;
+    justify-content: center;
 }
 
-.header__item {
-  color: black;
+.header__earth   {
+
+    width: 90px;
+    height: 88px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 30px 10px 0 450px;
+    overflow: hidden;
+    border-radius: 70%;
+   
+    box-shadow: 0 0 10px 10px rgb(44, 42, 42) inset, 0 0 10px 10px gray;
+
+}
+
+.header__earth > div{
+   width : 300%;
+   height: 100%;
+   animation: spin 30s linear alternate infinite;
+   background-image: url("Earth.jpg");
+   background-size: cover;
+}
+
+.header__earth  :after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 70%;
+}
+
+@keyframes spin{
+    to{
+        transform: translateX(-50%);
+    }
 }
 
 /* search section */
-.search {
-  padding: 10px 0;
+.search{
+    padding: 70px 0px;
+    margin-right: 100px;
 }
+
 
 .search__header {
   font-size: 30px;
@@ -60,15 +90,10 @@
   border: none;
   cursor: pointer;
   outline: none;
-}
 
-.articles{
-    display: flex;
-    justify-content: center;
-}
-.articles__list {
-    
-    
+
+
+.articles__list {    
     background-color: whitesmoke;
     margin-top: 10px;
     width: 550px;
@@ -90,13 +115,73 @@
 }
 .articles__anchor{
     color: black;
+  }
+  
+.search__button{
+    font-family: 'Bad Script', cursive;
+    padding: 2px 15px;
+    border-radius: 5px;
+    background-color: rgb(43, 40, 40);
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-left: 10px;
+}
+.article{
+    padding: 50px 0;
+}
+
+.articles__topic-item li{
+font-size: 30px;
+margin:0;
+display: flex;
+flex-direction: column;
+
+}
+  
+  .translate-button {
+    font-family: "Bad Script", cursive;
+    padding: 2px 20px;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color:black;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: smaller;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+  
+.articles__topic-item button{
+    font-family: 'Bad Script', cursive;
+    border-radius: 5px;
+    background-color: rgb(43, 40, 40);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-left: 600px;
+    margin-right: 600px;
 }
 
 
-@media only screen and (max-width: 450px) {
-  /* .home__cover{
-        width: 100vw;
-        height: 30vh;
-        margin:  30px 0;
-    } */
+
+@media only screen  and (max-width: 450px) {
+    .header__earth{
+        margin: 50px 70px 0px 25px;
+    }
+    .header__title{
+        margin-left: 60px;
+        margin-top: 30px;
+    }
+    .search{
+        margin-left: 15px;
+        margin-right: 0;
+    }
 }
