@@ -1,32 +1,47 @@
 let menu = document.getElementById("search__menu")
 let search = document.getElementById("search__button")
 let countryCode;
-let li=document.createElement('li');
-let ul=document.getElementsByClassName("topic-item");
+let ul = document.querySelector(".articles__list");
+let xhr = new XMLHttpRequest;
 
 
-search.addEventListener('click', () =>{
+search.addEventListener('click', () => {
     let countryCode = menu.value;
-    let xhr = new XMLHttpRequest;
-    
-
-    xhr.onreadystatechange = () => {
-        if (xhr.status === 200 && xhr.readyState === 4) {
-            const response = JSON.parse(xhr.responseText)
-            console.log(response)
-        }
-    }
-    
     var url = `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=626633f093cd40b7bda4ca1a94cc2b89`
 
-    xhr.open('GET', url)
-    xhr.send();
+    var child = ul.lastElementChild;
+    while (child) {
+        ul.removeChild(child);
+        child = ul.lastElementChild;
+    }
+
+    apicall(url)
+
 })
 
 
+let apicall = (url) => {
+    xhr.onreadystatechange = () => {
+        if (xhr.status === 200 && xhr.readyState === 4) {
+            const response = JSON.parse(xhr.responseText)
 
-apicall(url, (response) => {
-    apicall(response.title, (response) => {
-        console.log(response[0].title);
-    });
-});
+            let artArray = response.articles;
+
+            artArray.map(item => {
+                let li = document.createElement('li');
+                let btn=document.createElement('button');
+                btn.innerHTML="Translate";
+                li.innerHTML = item.title;
+                li.appendChild(btn); 
+                ul.appendChild(li);
+
+
+            });
+        }
+    }
+    xhr.open('GET', url)
+    xhr.send();
+
+}
+
+
