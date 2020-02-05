@@ -5,6 +5,7 @@ let ul = document.querySelector(".articles__list");
 let xhr = new XMLHttpRequest;
 
 
+
 search.addEventListener('click', () => {
     let countryCode = menu.value;
     var url = `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=626633f093cd40b7bda4ca1a94cc2b89`
@@ -19,6 +20,10 @@ search.addEventListener('click', () => {
 
 })
 
+ul.addEventListener('click', () => {
+    console.log(event.target)
+});
+
 
 let apicall = (url) => {
     xhr.onreadystatechange = () => {
@@ -29,10 +34,23 @@ let apicall = (url) => {
 
             artArray.map(item => {
                 let li = document.createElement('li');
-                let btn=document.createElement('button');
-                btn.innerHTML="Translate";
-                li.innerHTML = item.title;
-                li.appendChild(btn); 
+                li.classList.add("articles__item")
+                let transbtn = document.createElement('button');
+                transbtn.innerHTML = "Translate";
+
+                transbtn.classList.add("translate-button");
+                
+                let title=document.createElement('span');
+                title.classList.add("article__title")
+               
+
+                title.innerHTML=item.title;
+                let a=document.createElement('a');
+                a.appendChild(title);
+                li.appendChild(a);
+                a.href= item.url;
+                a.classList.add("articles__anchor");
+                li.appendChild(transbtn);
                 ul.appendChild(li);
 
 
