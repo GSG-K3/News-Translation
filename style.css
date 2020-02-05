@@ -1,28 +1,38 @@
 * {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  /* header Section */
+  
+  .header__title {
+    padding: 50px 0 0;
+    font-family: "Bad Script", cursive;
+    font-weight: bold;
+  }
+  
+  .translate-button {
+      font-family: "Bad Script", cursive;
+      padding: 2px 20px;
+      margin-top: 5px;
+      border-radius: 5px;
+      background-color:black;
+      color: whitesmoke;
+      font-weight: bold;
+      font-size: smaller;
+      border: none;
+      cursor: pointer;
+      outline: none;
+  }
+  
+  .header__item {
+    color: black;
+  }
 
-/* header Section */
-
-.header__title {
-  padding: 50px 0 0;
-  font-family: "Bad Script", cursive;
-  font-weight: bold;
-}
-
-/* header Section */
-.header{
-    display: flex;
-    justify-content: center;
-}
-
-.header__earth   {
-
+  .header__earth   {
     width: 90px;
     height: 88px;
-    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -30,9 +40,7 @@
     margin: 30px 10px 0 450px;
     overflow: hidden;
     border-radius: 70%;
-   
     box-shadow: 0 0 10px 10px rgb(44, 42, 42) inset, 0 0 10px 10px gray;
-
 }
 
 .header__earth > div{
@@ -42,7 +50,6 @@
    background-image: url("Earth.jpg");
    background-size: cover;
 }
-
 .header__earth  :after{
     position: absolute;
     top: 0;
@@ -58,67 +65,28 @@
     }
 }
 
-/* search section */
-.search{
-    padding: 70px 0px;
-    margin-right: 100px;
-}
-
-
-.search__header {
-  font-size: 30px;
-  font-family: "Bad Script", cursive;
-  font-weight: bold;
-}
-
-.search__menu {
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 10px 15px;
-  background: whitesmoke;
-  font-weight: bold;
-}
-
-.search__button {
-  font-family: "Bad Script", cursive;
-  padding: 2px 15px;
-  border-radius: 5px;
-  background-color: rgb(43, 40, 40);
-  color: white;
-  font-weight: bold;
-  font-size: larger;
-  border: none;
-  cursor: pointer;
-  outline: none;
-
-
-
-.articles__list {    
-    background-color: whitesmoke;
-    margin-top: 10px;
-    width: 550px;
-
-}
-
-.articles__list li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: whitesmoke;
-    margin-top: 10px;
-
-}
-
-.articles__item{
-    margin: 5px;
-    width: 550px;
-}
-.articles__anchor{
-    color: black;
+  
+  /* search section */
+  .search {
+    padding: 10px 0;
   }
   
-.search__button{
-    font-family: 'Bad Script', cursive;
+  .search__header {
+    font-size: 30px;
+    font-family: "Bad Script", cursive;
+    font-weight: bold;
+  }
+  
+  .search__menu {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background: whitesmoke;
+    font-weight: bold;
+  }
+  
+  .search__button {
+    font-family: "Bad Script", cursive;
     padding: 2px 15px;
     border-radius: 5px;
     background-color: rgb(43, 40, 40);
@@ -128,60 +96,43 @@
     border: none;
     cursor: pointer;
     outline: none;
-    margin-left: 10px;
-}
-.article{
-    padding: 50px 0;
-}
-
-.articles__topic-item li{
-font-size: 30px;
-margin:0;
-display: flex;
-flex-direction: column;
-
-}
+  }
   
-  .translate-button {
-    font-family: "Bad Script", cursive;
-    padding: 2px 20px;
-    margin-top: 5px;
-    border-radius: 5px;
-    background-color:black;
-    color: whitesmoke;
-    font-weight: bold;
-    font-size: smaller;
-    border: none;
-    cursor: pointer;
-    outline: none;
-}
+  .articles{
+      display: flex;
+      justify-content: center;
+  }
+  .articles__list {
+      
+      
+      background-color: whitesmoke;
+      margin-top: 10px;
+      width: 550px;
   
-.articles__topic-item button{
-    font-family: 'Bad Script', cursive;
-    border-radius: 5px;
-    background-color: rgb(43, 40, 40);
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    margin-left: 600px;
-    margin-right: 600px;
-}
-
-
-
-@media only screen  and (max-width: 450px) {
-    .header__earth{
-        margin: 50px 70px 0px 25px;
-    }
-    .header__title{
-        margin-left: 60px;
-        margin-top: 30px;
-    }
-    .search{
-        margin-left: 15px;
-        margin-right: 0;
-    }
-}
+  }
+  
+  .articles__list li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: whitesmoke;
+      margin-top: 10px;
+  
+  }
+  
+  .articles__item{
+      margin: 5px;
+      width: 550px;
+  }
+  .articles__anchor{
+      color: black;
+  }
+  
+  
+  @media only screen and (max-width: 450px) {
+    /* .home__cover{
+          width: 100vw;
+          height: 30vh;
+          margin:  30px 0;
+      } */
+  }

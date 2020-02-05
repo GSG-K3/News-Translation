@@ -9,15 +9,14 @@ let xhr = new XMLHttpRequest;
 search.addEventListener('click', () => {
     let countryCode = menu.value;
     var url = `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=626633f093cd40b7bda4ca1a94cc2b89`
+   
 
     var child = ul.lastElementChild;
     while (child) {
         ul.removeChild(child);
         child = ul.lastElementChild;
     }
-
     apicall(url)
-
 })
 
 ul.addEventListener('click', () => {
@@ -25,35 +24,63 @@ ul.addEventListener('click', () => {
 });
 
 
-let apicall = (url) => {
+let apicall = (url, callback) => {
     xhr.onreadystatechange = () => {
         if (xhr.status === 200 && xhr.readyState === 4) {
             const response = JSON.parse(xhr.responseText)
-
+            if (callback) {
+                callback(response);
+                return;
+            }
             let artArray = response.articles;
+        
 
             artArray.map(item => {
+
                 let li = document.createElement('li');
                 li.classList.add("articles__item")
-                let transbtn = document.createElement('button');
-                transbtn.innerHTML = "Translate";
 
-                transbtn.classList.add("translate-button");
-                
-                let title=document.createElement('span');
+                let title = document.createElement("span");
+                title.innerHTML = item.title;
                 title.classList.add("article__title")
-               
 
-                title.innerHTML=item.title;
-                let a=document.createElement('a');
-                a.appendChild(title);
-                li.appendChild(a);
-                a.href= item.url;
-                a.classList.add("articles__anchor");
-                li.appendChild(transbtn);
+                let description = document.createElement("span");
+                description.innerHTML = item.description;
+                title.classList.add("article__description")
+
+                let anchor =document.createElement('a');
+                anchor.href= item.url;
+                anchor.appendChild(title);
+                anchor.classList.add("articles__anchor");
+
+
+
+                let translateBtn = document.createElement('button');
+                translateBtn.classList.add("translate-btn");
+                translateBtn.innerHTML="Translate";
+                translateBtn.classList.add("translate-button");
+
+                li.appendChild(anchor);
+                li.appendChild(description)
+                li.appendChild(translateBtn);
+
                 ul.appendChild(li);
 
+                translateBtn.addEventListener("click", () =>{
+                    let url2 ="https://translate.yandex.net/api/v1.5/tr.json/translate" + 
+                    "?key=trnsl.1.1.20200204T203412Z.4c3799296843dd33.06f6e271e121e6ebd8428ff4fbab8ad1e1fa3a32"+
+                    "&text="+ item.description +
+                    "&lang=ar"
 
+                    apicall(url2, (response)=>{
+                        if(response.text[0] != null){
+                        description.innerText = response.text[0];
+                        }
+
+                    })
+                })
+
+            
             });
         }
     }
