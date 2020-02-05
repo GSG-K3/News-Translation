@@ -5,14 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My-News</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script|Black+Ops+One|Monoton|Playball&display=swap" rel="stylesheet">
+      <title>My-News</title>
 </head>
 
 <body>
 
+    <!-- Header Section -->
+    <section class="header">
+        <h1 class="header__title"> MY NEWS </h1>
+        <ul class="header__nav">
+            <li ><a  class="header__item" href="#home">Home</a></li>
+            <li><a class="header__item" href="#search">Search</a></li>
+            <li><a class="header__item" href="#articles">Top News</a></li>
+        </ul>
+    </section>
+
+    <!-- <section class="home" id="home">
+        <img  class="home__cover" src="./images/world.jpg" alt="image for World Map Typography"/>
+    </section> -->
+
     <!-- Search Section -->
-    <section id="search-section">
-        <select id="search-section__menu" class="search-section__menu">
+    <section class="search" id="search">
+        <p class="search__header">Choose your destination</p>
+        <select id="search__menu" class="search__menu">
             <option value="au">Australia</option>
             <option value="br">Brazil</option>
             <option value="ca">Canada</option>
@@ -34,11 +51,11 @@
             <option value="gb">United Kingdom</option>
             <option value="us">United States</option>
         </select>
-        <button id="search-section__button" class="search-section__button">search</button>
+        <button id="search__button" class="search__button">search</button>
     </section>
 
-
-    <section class="section-articles">
+    <!-- Articles Section -->
+    <section class="articles" id="articles">
         <ul class="topic-item">
 
 

@@ -1,5 +1,5 @@
-let menu = document.getElementById("search-section__menu")
-let search = document.getElementById("search-section__button")
+let menu = document.getElementById("search__menu")
+let search = document.getElementById("search__button")
 let countryCode;
 let li=document.createElement('li');
 let ul=document.getElementsByClassName("topic-item");
@@ -18,7 +18,6 @@ search.addEventListener('click', () =>{
     }
     
     var url = `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=626633f093cd40b7bda4ca1a94cc2b89`
-         console.log(url)
 
     xhr.open('GET', url)
     xhr.send();
