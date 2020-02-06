@@ -9,7 +9,7 @@
     padding: 10px 0 0;
     font-family: "Bad Script", cursive;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
   }
   
   .translate-button {
@@ -35,7 +35,6 @@
     margin: 30px 10px 0 600px;
     overflow: hidden;
     border-radius: 70%;
-    
     box-shadow: 0 0 10px 10px rgb(44, 42, 42) inset, 0 0 10px 10px gray;
 }
 
@@ -63,7 +62,7 @@
   }
   
   .search__header {
-    font-size: 25px;
+    font-size: 22px;
     font-family: "Bad Script", cursive;
     font-weight: bold;
   }
@@ -87,7 +86,13 @@
     cursor: pointer;
     outline: none;
   }
+
+  .search__label{
+    font-size: 0.5px;
+    color: white;
+  }
   
+  /* Article Section*/
   .articles{
       display: flex;
       justify-content: center;
@@ -99,6 +104,10 @@
       margin-top: 10px;
   }
   
+  .article__img{
+    width: 200px;
+    height: 100px;
+  }
   .articles__item{
     background-color: whitesmoke;
     display: flex;
@@ -114,17 +123,14 @@
   
   @media only screen and (max-width: 450px) {
     .header__earth{
-      width: 90px;
-      height: 88px;
-      margin: 30px 0 0 120px;
-      overflow: hidden;
-      border-radius: 70%;
+  
+    margin: 30px 0 0 120px;
    
-      box-shadow: 0 0 10px 10px rgb(44, 42, 42) inset, 0 0 10px 10px gray;
-      
   }
   .header__title{
      margin-top: 30px; 
   }
 
   }
+
+  
